@@ -1,8 +1,40 @@
-POST http://localhost:3009/api/login
+# POST http://localhost:3010/api/users
+# Content-Type: application/json
+
+# {
+#   "username": "teejay",
+#   "name": "Test User",
+#   "password": "$2a$10$NRvxAXu0vYOxDHr0nfsPie4yEg1Yaf8q6W9Octqm8eF8bZuOUySLe"
+# }
+
+
+# POST http://localhost:3009/api/users
+# Content-Type: application/json
+
+# {
+#   "username": "teejay",
+#   "name": "Test User",
+#   "password": "password123"
+# }
+
+
+
+POST http://localhost:3010/api/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJpZCI6IjY2ZjJmNTM0ZjY0MzE1OTBiYTE4MGE1ZCIsImlhdCI6MTcyNzIwMTAwNSwiZXhwIjoxNzI3MjA0NjA1fQ.PwsSrfuBoS0c-nYIW6wgWpOOzWPrY3yStcgJrjeUHMw
+
 Content-Type: application/json
 
 {
-  "username": "testuser",
-  "name": "Test User",
-  "password": "password123"
+  "title": "New Blog Post",
+  "author": "Author Name",
+  "url": "http://example.com"
 }
+
+
+# POST http://localhost:3010/api/login
+# Content-Type: application/json
+
+# {
+#   "username": "newuser",
+#   "password": "secret123"
+# }

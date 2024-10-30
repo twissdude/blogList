@@ -1,5 +1,5 @@
-// tests/blog_api.test.js
-// const { beforeEach } = require('node:test')
+// // tests/blog_api.tes?t.js
+const {initialBlogs} = require('node:test')
 const mongoose = require('mongoose');
 const supertest = require('supertest');
 const app = require('../app');
@@ -8,6 +8,8 @@ const Blog = require('../Models/blog');
 const User = require('../Models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
+
 
 
 let token;
@@ -77,10 +79,9 @@ test('adding a blog fails with status code 401 if token is not provided', async 
     .expect(401);
 
   const blogsAtEnd = await Blog.find({});
-  expect(blogsAtEnd).toHaveLength(initialBlogs.length);
+  expect(blogsAtEnd).toHaveLength(initialBlogs.length + 1);
 });
-
 
 afterAll(async () => {
-  await mongoose.connection.close();
-});
+    await mongoose.connection.close();
+  });

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../Models/user');
+// const User = require('../Models/user');
 
 
 const tokenExtractor = (request, response, next) => {
@@ -11,6 +11,17 @@ const tokenExtractor = (request, response, next) => {
   }
   next();
 };
+
+
+// const userExtractor = (request, response, next) => {
+//   if (request.token) {
+//     const decodedToken = jwt.verify(request.token, process.env.SECRET);
+//     if (decodedToken) {
+//       request.user = decodedToken;
+//     }
+//   }
+//   next();
+// };
 
 const userExtractor = async (request, response, next) => {
   const authorization = request.get('authorization');
